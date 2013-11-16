@@ -15,12 +15,10 @@
 # gem 'pg'
 #
 development:
-  adapter: sqlite3
+  adapter: postgresql
   encoding: unicode
-  database: db/likeme_development
+  database: likeme_development
   pool: 5
-  username: likeme
-  password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
