@@ -46,8 +46,6 @@ test:
   encoding: unicode
   database: likeme_test
   pool: 5
-  username: likeme
-  password:
 
 production:
   adapter: postgresql
