@@ -18,9 +18,9 @@
         <td><%= story.user.andand.email %></td>
         <td><strong><%= story.topic.andand.title %></strong></td>
         <td><%= story.desc %></td>
-        <td><%= link_to 'Show', story %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %></td>
-        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Show", story %></td>
+        <td><%= link_to "Edit", edit_story_path(story) %></td>
+        <td><%= link_to "Destroy", story, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Story', new_story_path %>
+<%= link_to "New Story", new_story_path %>

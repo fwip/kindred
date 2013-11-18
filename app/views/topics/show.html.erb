@@ -4,7 +4,7 @@
   <%= @topic.title %>
 </h1>
 
-<p> <%= pluralize(@story_count, 'User') %> with this story:
+<p> <%= pluralize(@story_count, "User") %> with this story:
 <ul>
 <% @topic.stories.each do |s| %>
   <li> <strong> <%= s.desc %> </strong> - <%= s.user.email %> </li>
@@ -12,5 +12,5 @@
 </ul>
 </p>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to "Edit", edit_topic_path(@topic) %> |
+<%= link_to "Back", topics_path %>
