@@ -9,6 +9,9 @@ gem 'pg'
 # Use devise for users
 gem 'devise'
 
+# Use andand for convenience
+gem 'andand'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
