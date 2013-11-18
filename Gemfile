@@ -49,3 +49,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Heroku asset serving
+gem 'rails_12factor', group: :production
