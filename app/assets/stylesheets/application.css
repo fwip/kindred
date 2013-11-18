@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+.navheader {
+  text-align: right;
+  border-bottom: solid black 1px;
+}
