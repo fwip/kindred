@@ -24,15 +24,27 @@ class StoriesController < ApplicationController
   # POST /stories
   # POST /stories.json
   def create
-    @story = Story.new(story_params)
+    if user_signed_in?
 
-    respond_to do |format|
-      if @story.save
-        format.html { redirect_to @story, notice: 'Story was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @story }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @story.errors, status: :unprocessable_entity }
+      @story = Story.new(story_params)
+      @story.user = current_user
+
+      respond_to do |format|
+        topic_title = params[:story][:topic_title]
+        if ! topic_title.nil?
+          @story.topic = Topic.getByTitle(topic_title)
+        end
+        if @story.save
+          format.html { redirect_to @story, notice: 'Story was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @story }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @story.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to 'users/sign_in' }
       end
     end
   end

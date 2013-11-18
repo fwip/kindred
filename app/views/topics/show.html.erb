@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h1>
   <%= @topic.title %>
+</h1>
+
+<p> <%= pluralize(@story_count, 'User') %> with this story:
+<ul>
+<% @topic.stories.each do |s| %>
+  <li> <strong> <%= s.desc %> </strong> - <%= s.user.email %> </li>
+<% end %>
+</ul>
 </p>
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
