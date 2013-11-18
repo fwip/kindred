@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131116224508) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "stories", force: true do |t|
     t.integer  "user_id"
     t.integer  "topic_id"
@@ -24,8 +21,8 @@ ActiveRecord::Schema.define(version: 20131116224508) do
     t.datetime "updated_at"
   end
 
-  add_index "stories", ["topic_id"], name: "index_stories_on_topic_id", using: :btree
-  add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
+  add_index "stories", ["topic_id"], name: "index_stories_on_topic_id"
+  add_index "stories", ["user_id"], name: "index_stories_on_user_id"
 
   create_table "topics", force: true do |t|
     t.text     "title"
@@ -48,7 +45,7 @@ ActiveRecord::Schema.define(version: 20131116224508) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', group: :production
+
+# Use sqlite3 for development & test
+gem 'sqlite3', group: [:development, :test]
 
 # Use devise for users
 gem 'devise'
