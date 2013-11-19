@@ -25,6 +25,8 @@ $navbar-link-color: #4A8;
 //$button-color: lighten(#397863, 20%);
 $button-color: #D48;
 
+$notice-color: #4A8;
+$alert-color: #F22;
 
 body {
   font-family: 'Roboto';
@@ -126,4 +128,22 @@ body {
   border-radius: 20px;
   background-color: $background-color;
   min-height: 80vh;
+}
+
+.bar {
+  text-align: right;
+  border-radius: 5px;
+  line-height: 200%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 50px;
+  color: white;
+}
+
+.notice {
+  background-color: $notice-color;
+}
+
+.alert {
+  background-color: $alert-color;
 }
