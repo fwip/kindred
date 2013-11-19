@@ -55,3 +55,6 @@ end
 
 # Heroku asset serving
 gem 'rails_12factor', group: :production
+
+# Bourbon for SCSS mixins
+gem 'bourbon'

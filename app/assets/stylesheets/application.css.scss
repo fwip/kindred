@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+@import "bourbon";
+
+@include font-face('Volstead', 'volstead/Volstead', $asset-pipeline: true);
+@include font-face('Roboto', 'roboto/Roboto-Regular', $asset-pipeline: true);
+
+/* Color definitions */
+$primary-color: #F42;
+$main-color: #FEC;
+$accent-color: #28E;
+
+body {
+  font-family: 'Roboto';
+  background-color: $main-color;
+}
+
+.navheader {
+  margin: 0px auto;
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-top: -8px;
+  overflow: hidden;
+  background-color: $primary-color;
+
+  height: 60px;
+
+  a {
+    color: $main-color;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+  }
+}
+
+.logo {
+  font-family: 'Volstead';
+  float: left;
+  font-size: 200%;
+  line-height: 00%;
+
+}
+
+.navlinks {
+  float: right;
+  text-align: right;
+}
+
+.clear {
+  clear: both;
+}
