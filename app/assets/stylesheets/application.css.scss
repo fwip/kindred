@@ -28,6 +28,18 @@ $button-color: #D48;
 $notice-color: #4A8;
 $alert-color: #F22;
 
+$story-bg-color: #ACA;
+
+$default-link-color: blue;
+$default-link-visited-color: purple;
+
+a {
+  color: $default-link-color;
+}
+a:visited {
+  color: $default-link-visited-color;
+}
+
 body {
   font-family: 'Roboto';
   background-color: $accent-color;
@@ -146,4 +158,29 @@ body {
 
 .alert {
   background-color: $alert-color;
+}
+
+.story {
+  border: solid 1px darken($story-bg-color, 20%);
+  background-color: $story-bg-color;
+  padding: 15px;
+  border-radius: 15px;
+
+  margin-bottom: 4px;
+
+  h3 {
+    background-color: lighten($story-bg-color, 10%);
+    margin: -15px;
+    margin-bottom: 0px;
+    padding: 10px;
+    padding-left: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 1px solid darken($story-bg-color, 20%);
+  }
+
+  div.desc {
+    padding-top: 10px;
+    //background-color: lighten($story-bg-color, 10%);
+  }
 }
