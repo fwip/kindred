@@ -17,13 +17,18 @@
 @include font-face('Roboto', 'roboto/Roboto-Regular', $asset-pipeline: true);
 
 /* Color definitions */
-$primary-color: #F42;
-$main-color: #FEC;
-$accent-color: #28E;
+$primary-color: #DE3931;
+$background-color: #F5EBB8;
+$accent-color: #940F1C;
+$navbar-link-color: #4A8;
+
+//$button-color: lighten(#397863, 20%);
+$button-color: #D48;
+
 
 body {
   font-family: 'Roboto';
-  background-color: $main-color;
+  background-color: $accent-color;
 }
 
 .navheader {
@@ -37,7 +42,7 @@ body {
   height: 60px;
 
   a {
-    color: $main-color;
+    color: $background-color;
     text-decoration: none;
   }
 
@@ -61,4 +66,62 @@ body {
 
 .clear {
   clear: both;
+}
+
+.button {
+  background-color: $button-color;
+  color: white;
+  border: darken($button-color, 10%) solid 1px;
+  border-radius: 5px;
+  min-height: 40px;
+  font-weight: bold;
+  outline: none;
+}
+
+.button:hover {
+  background-color: lighten($button-color, 5%);
+}
+
+.button:active {
+  background-color: darken($button-color, 5%);
+}
+
+.sidebar {
+  float: left;
+  width: 200px;
+  background-color: $background-color;
+  border-radius: 10px;
+
+  ul {
+    list-style: none;
+    //margin-left: 0px;
+    padding-left: 12px;
+    padding-right: 12px;
+    //text-indent: -1em;
+    line-height: 200%;
+    text-align: center;
+
+    li {
+      background-color: $navbar-link-color;
+      border: solid black 1px;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    li:hover {
+      background-color: lighten($navbar-link-color, 5%);
+    }
+  }
+}
+
+.maincontent {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: $background-color;
+  min-height: 80vh;
 }
