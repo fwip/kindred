@@ -103,7 +103,7 @@ body {
 
     li {
       background-color: $navbar-link-color;
-      border: solid black 1px;
+      border: solid darken($navbar-link-color, 20%) 1px;
 
       a {
         color: white;
