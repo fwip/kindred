@@ -33,7 +33,7 @@ class Story < ActiveRecord::Base
       with_desc: true
     }.merge options
 
-    stories = Story.includes(:topic, :user).order(updated_at: :desc)
+    stories = Story.includes(:topic, :user).order(:updated_at)
 
     if opts[:user_id].nil?
       stories = stories.where( public: true)
