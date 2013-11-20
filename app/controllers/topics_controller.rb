@@ -10,7 +10,10 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
-    @story_count = @topic.stories.count
+    @story_count = @topic.stories.select(:user_id).uniq.count
+    @stories = Story.latest({user_id: current_user.id,
+                             limit: 10,
+                             topic_id: @topic.id})
   end
 
   # GET /topics/new

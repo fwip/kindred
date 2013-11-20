@@ -1,31 +1,8 @@
-<h1>Listing stories</h1>
+<h1>Recent stories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Topic</th>
-      <th>Desc</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <% @stories.each do |story| %>
+    <%= render partial: "story_preview", locals: {story: story} %>
+  <% end %>
 
-  <tbody>
-    <% @stories.each do |story| %>
-      <tr>
-        <td><%= story.user.andand.email %></td>
-        <td><strong><%= story.topic.andand.title %></strong></td>
-        <td><%= story.desc %></td>
-        <td><%= link_to "Show", story %></td>
-        <td><%= link_to "Edit", edit_story_path(story) %></td>
-        <td><%= link_to "Destroy", story, method: :delete, data: { confirm: "Are you sure?" } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to "New Story", new_story_path %>
+  <%= button_to "New Story", new_story_path, method: :get, class: "button" %>

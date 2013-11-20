@@ -1,0 +1,6 @@
+<div class="story">
+  <h3> <%= link_to(story.topic.title, topic_path(story.topic)) %> </h3>
+  <div class="desc"> <%= story.desc %> </div>
+  - <%= link_to(story.user.email, user_path(story.user)) %>
+
+</div>

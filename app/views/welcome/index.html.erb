@@ -21,11 +21,6 @@ like us, we better understand ourselves.
 <% @recent_stories = Story.latest %>
 
 <h3> Recent stories from our users: </h3>
-<% @recent_stories.each do |s| %>
-<div class="story">
-  <h3> <%= link_to(s.topic.title, topic_path(s.topic)) %> </h3>
-  <div class="desc"> <%= s.desc %> </div>
-  - <%= link_to(s.user.email, user_path(s.user)) %>
-
-</div>
+<% @recent_stories.each do |story| %>
+  <%= render partial: "story_preview", locals: {story: story} %>
 <% end %>

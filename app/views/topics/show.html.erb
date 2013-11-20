@@ -5,11 +5,9 @@
 </h1>
 
 <p> <%= pluralize(@story_count, "User") %> with this story:
-<ul>
-<% @topic.stories.each do |s| %>
-  <li> <strong> <%= s.desc %> </strong> - <%= s.user.email %> </li>
+<% @stories.each do |s| %>
+  <%= render partial: "story_preview", locals: {story: s} %>
 <% end %>
-</ul>
 </p>
 
 <%= link_to "Edit", edit_topic_path(@topic) %> |
